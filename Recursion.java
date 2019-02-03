@@ -1,7 +1,7 @@
 public class Recursion {
     public static double guess(double n, double guess, double tolerance) {
 	//if the guess^2 is close enough to n (determined by the tolerance), it returns the guess 
-	if (n % (guess * guess) <= tolerance) {
+	if (Math.abs(n - (guess * guess)) / n <= tolerance) {
 	    return guess;
 	}
 	//conduct newton's sqrt approx

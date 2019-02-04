@@ -1,4 +1,4 @@
-import java.util.*;
+ import java.util.*;
 public class Recursion {
     public static double guess(double n, double guess, double tolerance) {
 	//if the guess^2 is close enough to n (determined by the tolerance), it returns the guess 
@@ -33,18 +33,18 @@ public class Recursion {
     public static int fib(int n) {
 	return linear(n, 1, 0);
     }
-    public static ArrayList<Integer> sums(ArrayList<Integer> s, int e, int choice1, int choice2) {
-	if (e == 0) {
-	    return s;
+    public static void sums(ArrayList<Integer> s, int n, int added) {
+	if (n == 0) {
+	    s.add(added);
 	} else {
-	    s.add(choice1);
-	    s.add(choice2);
-	    return sums(s, e-1, e-1, choice2 + e-1);
+	    sums(s, n-1, n+added);
+	    sums(s, n-1, added);
 	}
     }
     public static ArrayList<Integer> makeAllSums(int n) {
 	ArrayList<Integer> sums = new ArrayList<Integer>(n * n + 1);
-	return sums(sums, n, 0, n);
+	sums(sums, n, 0);
+	return sums;
     }
     public static void main(String[] args) {
 	System.out.println(sqrt(100.0, .000001));

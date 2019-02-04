@@ -45,13 +45,14 @@ public class Recursion {
 	sums(sums, n, 0,3);
 	return sums;
     }
-    public static void main(String[] args) {
-	System.out.println(sqrt(100.0, .000001));
-	System.out.println(sqrt(2.0, .000001));
-	for(int i = 0; i < 10; i++) {
-	    System.out.println(fib(i));
-	}
-	System.out.println(makeAllSums(3));
-    }
+    // public static void main(String[] args) {
+    // 	System.out.println(sqrt(100.0, .000001));
+    // 	System.out.println(sqrt(2.0, .000001));
+    // 	for(int i = 0; i < 10; i++) {
+    // 	    System.out.println(fib(i));
+    // 	}
+    // 	System.out.println(makeAllSums(3));
+    // 	System.out.println(makeAllSums(5));
+    // }
     
 }

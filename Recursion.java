@@ -33,17 +33,16 @@ public class Recursion {
     public static int fib(int n) {
 	return linear(n, 1, 0);
     }
-    public static void sums(ArrayList<Integer> s, int n, int added) {
-	if (n == 0) {
+    public static void sums(ArrayList<Integer> s, int n, int added, int notAdded) {
+	if (n != 0) {
 	    s.add(added);
-	} else {
-	    sums(s, n-1, n+added);
-	    sums(s, n-1, added);
+	    sums(s, n-1, n-1+added, added);
+	    sums(s, n-1, notAdded+n-1,notAdded);
 	}
     }
     public static ArrayList<Integer> makeAllSums(int n) {
 	ArrayList<Integer> sums = new ArrayList<Integer>(n * n + 1);
-	sums(sums, n, 0);
+	sums(sums, n, 0,3);
 	return sums;
     }
     public static void main(String[] args) {
